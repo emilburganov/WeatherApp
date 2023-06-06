@@ -174,8 +174,8 @@ const handleClose = () => {
     renderApp();
 };
 
-fetchData();
-
 window.addEventListener('beforeunload', () => {
     localStorage.setItem('store', JSON.stringify(store));
 });
+
+fetchData();
