@@ -53,8 +53,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*width: 450px;*/
-    /*min-height: 450px;*/
     height: fit-content;
     background-color: white;
     overflow: hidden;
@@ -66,7 +64,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /*min-height: 450px;*/
 }
 
 .icon {
@@ -85,10 +82,13 @@ body {
 
 .weather__top.day {
     background: var(--day-color);
+    border: 1px solid var(--day-color)
 }
 
 .weather__top.night {
     background: var(--night-color);
+    outline: #4CAF50 solid 10px;
+    margin: -2px;
 }
 
 .weather__city {
@@ -146,18 +146,11 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    /*display: flex;*/
-    /*flex-wrap: wrap;*/
-    /*justify-content: space-between;*/
-    /*align-items: center;*/
-    /*flex-grow: 1;*/
-    /*row-gap: 20px;*/
     padding: 20px;
     height: 100%;
 }
 
 .weather__property {
-    /*width: 50%;*/
     display: flex;
     align-items: center;
     gap: 10px;
