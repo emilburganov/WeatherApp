@@ -1,11 +1,11 @@
-/* RESET */
+/* Reset */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/* COLORS */
+/* Colors */
 :root {
     --bg-color: linear-gradient(170deg, #2e335a 5%, #1c1b33 95%);
     --night-color: linear-gradient(270deg, #362a84 10%, #21114b 90%);
@@ -37,7 +37,7 @@
     font-weight: 400;
 }
 
-/* COMMON */
+/* Base */
 body {
     display: flex;
     justify-content: center;
@@ -53,21 +53,20 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 450px;
-    min-height: 450px;
+    /*width: 450px;*/
+    /*min-height: 450px;*/
     height: fit-content;
     background-color: white;
-    border-radius: 15px;
     overflow: hidden;
     margin: 15px;
 }
 
-/* WEATHER */
+/* Weather */
 .weather {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 450px;
+    /*min-height: 450px;*/
 }
 
 .icon {
@@ -89,7 +88,7 @@ body {
 }
 
 .weather__top.night {
-    background:  var(--night-color);
+    background: var(--night-color);
 }
 
 .weather__city {
@@ -144,18 +143,21 @@ body {
 }
 
 .weather__bottom {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-    row-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    /*flex-grow: 1;*/
+    /*row-gap: 20px;*/
     padding: 20px;
     height: 100%;
 }
 
 .weather__property {
-    width: 50%;
+    /*width: 50%;*/
     display: flex;
     align-items: center;
     gap: 10px;
@@ -177,7 +179,7 @@ body {
     color: #5b5b5b;
 }
 
-/* LOADER */
+/* Loader */
 .loader {
     display: inline-block;
     position: relative;
@@ -219,7 +221,7 @@ body {
     }
 }
 
-/* POPUP */
+/* Popup */
 .popup {
     position: relative;
     width: 450px;
@@ -295,4 +297,23 @@ body {
 
 .popup__form-btn:hover {
     opacity: 0.95;
+}
+
+/* Responsive */
+@media screen and (max-width: 425px) {
+    .weather__bottom, .weather__top {
+        padding: 15px;
+    }
+
+    .container {
+        margin: 10px;
+    }
+
+    .weather__property-value {
+        font-size: 14px;
+    }
+
+    .weather__info-temperature {
+        font-size: 36px;
+    }
 }
