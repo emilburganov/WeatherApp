@@ -78,16 +78,15 @@ body {
     padding: 20px 20px 30px;
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
     color: white;
+    margin: -1px;
 }
 
 .weather__top.day {
     background: var(--day-color);
-    margin: -1px;
 }
 
 .weather__top.night {
     background: var(--night-color);
-    margin: -1px;
 }
 
 .weather__city {
@@ -98,7 +97,7 @@ body {
 
 .weather__city-name {
     width: fit-content;
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -140,7 +139,7 @@ body {
 }
 
 .weather__info-temperature {
-    font-size: 48px;
+    font-size: 42px;
     font-weight: 700;
 }
 
@@ -186,8 +185,8 @@ body {
     position: absolute;
     left: 8px;
     width: 16px;
-    background: var(--bg-color);
-    animation: loader 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+    background: #2E335A;
+    animation: loader .6s cubic-bezier(0, 0.5, 0.5, 1) infinite;
 }
 
 .loader span:nth-child(1) {
@@ -241,7 +240,7 @@ body {
     margin-top: 10px;
     width: 25px;
     height: 3px;
-    background: #2E335A;
+    background-color: #2E335A;
     transform: rotate(45deg);
     position: relative;
 }
@@ -251,7 +250,7 @@ body {
     display: block;
     width: 25px;
     height: 3px;
-    background: #2E335A;
+    background-color: #2E335A;
     transform: rotate(-90deg);
     position: absolute;
     top: 0;
