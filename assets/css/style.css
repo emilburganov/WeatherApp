@@ -71,11 +71,6 @@ body {
     justify-content: space-between;
 }
 
-.icon {
-    width: 60px;
-    height: 60px;
-}
-
 .weather__top {
     display: flex;
     flex-direction: column;
@@ -87,13 +82,11 @@ body {
 
 .weather__top.day {
     background: var(--day-color);
-    border: 1px solid var(--day-color);
     margin: -1px;
 }
 
 .weather__top.night {
     background: var(--night-color);
-    outline: #4CAF50 solid 10px;
     margin: -1px;
 }
 
@@ -121,11 +114,14 @@ body {
     flex-direction: column;
     align-items: center;
     margin-top: -10px;
+    width: 80px;
+    text-align: -webkit-center;
 }
 
 .weather__info-left > img {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
 }
 
 .weather__info-left > p {
@@ -160,7 +156,6 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding-right: 15px;
 }
 
 .weather__property-icon {
@@ -245,7 +240,7 @@ body {
     display: block;
     margin-top: 10px;
     width: 25px;
-    height: 2px;
+    height: 3px;
     background: #2E335A;
     transform: rotate(45deg);
     position: relative;
@@ -255,7 +250,7 @@ body {
     content: "";
     display: block;
     width: 25px;
-    height: 2px;
+    height: 3px;
     background: #2E335A;
     transform: rotate(-90deg);
     position: absolute;
@@ -295,23 +290,4 @@ body {
 
 .popup__form-btn:hover {
     opacity: 0.95;
-}
-
-/* Responsive */
-@media screen and (max-width: 425px) {
-    .weather__bottom, .weather__top {
-        padding: 15px;
-    }
-
-    .container {
-        margin: 10px;
-    }
-
-    .weather__property-value {
-        font-size: 14px;
-    }
-
-    .weather__info-temperature {
-        font-size: 36px;
-    }
 }

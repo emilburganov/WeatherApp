@@ -81,6 +81,16 @@ const fetchData = async () => {
     }
 };
 
+const getIconCode = path => {
+    const pathArray = path.split('.');
+
+    return pathArray[pathArray.length - 2].split('/').pop();
+}
+
+const getWeatherIcon = (path, isDay) => {
+    return 'assets/images/' + (isDay ? 'day/' : 'night/') + getIconCode(path) + '.svg';
+}
+
 const getTemplate = () => {
     const {city, description, time, temperature, isDay, properties} = store.weather;
 
@@ -91,7 +101,7 @@ const getTemplate = () => {
                     <p class="weather__city-name">${city}</p>
                     <div class="weather__info">
                         <div class="weather__info-left">
-                            <img class="icon" src="${description.icon}" alt="icon">
+                            <img class="icon" src="${getWeatherIcon(description.icon, isDay)}" alt="icon">
                             <p>${description.text}</p>
                         </div>
                         <div class="weather__info-right">
@@ -106,16 +116,16 @@ const getTemplate = () => {
             </div>`;
 };
 
-const renderAppProperties = (properties) => {
+const renderAppProperties = properties => {
     return Object.values(properties).map(({title, value, icon}) => {
         return `<div class="weather__property">
-                   <div class="weather__property-icon">
-                    ${icon}
-                   </div>
-                   <div class="weather__property-info">
-                     <div class="weather__property-value">${value}</div>
-                     <div class="weather__property-description">${title}</div>
-                   </div>
+                    <div class="weather__property-icon">
+                        ${icon}
+                    </div>
+                    <div class="weather__property-info">
+                        <div class="weather__property-value">${value}</div>
+                        <div class="weather__property-description">${title}</div>
+                    </div>
                 </div>`;
     }).join('');
 };
@@ -156,14 +166,14 @@ const renderApp = () => {
     city.addEventListener('click', renderPopup);
 };
 
-const handleInput = (event) => {
+const handleInput = event => {
     store.weather = {
         ...store.weather,
         city: event.target.value,
     };
 };
 
-const handleSubmit = (event) => {
+const handleSubmit = event => {
     event.preventDefault();
 
     fetchData();
